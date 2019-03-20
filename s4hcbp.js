@@ -15,7 +15,7 @@ module.exports = {
     handler: function (event, context) {
         var s4hcbp = context.getSecretValueJSON('s2', 's4hcbp');
         var opts1 = {
-            url: s4hcbp.uri + "/A_BusinessPartner('" + JSON.parse(event.data).EVENT_PAYLOAD.KEY[0].BUSINESSPARTNER + "')?$format=json&$expand=to_BusinessPartnerAddress",
+            url: s4hcbp.uri + "/A_BusinessPartner('" + JSON.parse(event.data).data.KEY[0].BUSINESSPARTNER + "')?$format=json&$expand=to_BusinessPartnerAddress",
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
